@@ -2,11 +2,11 @@
 class mulgara::params {
   case $operatingsystem {
     /(Ubuntu|Debian)/: {
-      $source_url = "/vagrant/mulgara-installer-3.6.2.jar"
-      $home_dir = "/usr/share/mulgara-3.6.2/"
+      $source_url = "/vagrant/mulgara-2.1.13-bin.tar.gz"
+      $home_dir = "/usr/share/mulgara-2.1.13/"
       $data_dir = "/var/lib/mulgara/"
       $log_dir = "/var/log/mulgara/"
-      $package = "mulgara-installer-3.6.2"
+      $package = "mulgara-2.1.13"
       $mulgara_user_home_dir = "/home/mulgara36"
       $mulgara_user = "mulgara36"
       $java_home = "/usr/lib/jvm/java-6-openjdk-amd64/"

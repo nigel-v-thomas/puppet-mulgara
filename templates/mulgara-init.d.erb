@@ -12,7 +12,7 @@
 ### END INIT INFO
 
 # Check files exist and read permission granted
-[ -x <%= @mulgara_full_path %> ] || echo "unable to execute <%= @mulgara_start_full_path %>" exit $?
+[ -f <%= @mulgara_full_path %> ] || echo "unable to find file <%= @mulgara_start_full_path %>" exit $?
 
 VERSION=0.2
 

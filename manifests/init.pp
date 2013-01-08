@@ -6,6 +6,8 @@
 #
 # Actions:
 #
+# Requires:
+#   Package Java JDK
 # Sample Usage:
 #
 # [Remember: No empty lines between comments and class definition]
@@ -21,11 +23,6 @@ class mulgara (
       $enable_resource_index = $mulgara::params::enable_resource_index,
       $create_mulgara_user = $mulgara::params::create_mulgara_user
       )inherits mulgara::params {
-
-  package {"openjdk-6-jdk":
-    ensure => present,
-    before => Class["mulgara::install"]
-  }  
 
   class { 
     "mulgara::install":
@@ -44,7 +41,7 @@ class mulgara (
     "mulgara::service":
     home_dir => $home_dir,
     log_dir => $log_dir,
-    data_dir => $data_dir,
+    package => $package,
     mulgara_user => $mulgara_user,
     require => Class["mulgara::install"]
   }  
