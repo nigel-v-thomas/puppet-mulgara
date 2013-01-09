@@ -64,16 +64,16 @@ class mulgara::install (
     }
   }
  
-  # if source url is a valid url, download solr
+  # if source url is a valid url, download 
   if $source_url =~ /^http.*/ {
-    $source = "${dir}/${package}.tgz"
+    $source = "${temp_dir}/${package}.tgz"
 
     exec { "download-mcf":
-      command => "wget $source_url",
+      command => "wget $source_url --output-document=${package}.tgz",
       creates => "$source",
-      cwd => "$dir",
+      cwd => "$temp_dir",
       path => ["/bin", "/usr/bin", "/usr/sbin"],
-      require => File[$mcf_synchdirectory],
+      require => Exec["create_mulgara_home_dir"],
       before => Exec["unpack-mulgara"],
     }
     

@@ -8,10 +8,10 @@ class mulgara::params {
       $log_dir = "/var/log/mulgara/"
       $package = "mulgara-2.1.13"
       $mulgara_user_home_dir = "/home/mulgara36"
-      $mulgara_user = "mulgara36"
+      $mulgara_user = "root"
       $java_home = "/usr/lib/jvm/java-6-openjdk-amd64/"
       $enable_resource_index = true
-      $create_mulgara_user = true
+      $create_mulgara_user = false
     }
     default: {
       fail("Operating system $operatingsystem is not supported by the tomcat module")

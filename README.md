@@ -20,12 +20,13 @@ Add this to the modules directory.
 Usage
 =====
   Define mulgara installation path
-      $mulgara_home_path = "/usr/share/mulgara-3.6.2/" 
+      $mulgara_home_path = "/usr/share/mulgara-2.1.13/" 
   
   Set the source url for the installer, this can be a local path or a url to the installer.
 
   class {"mulgara":
-    source_url => "/vagrant/mulgara-installer-3.6.2.jar",
+    source_url => "/vagrant/mulgara-2.1.13-bin.tar.gz",
+    #source_url => "http://mulgara.org/files/v2.1.13/mulgara-2.1.13-bin.tar.gz",
     home_dir => $mulgara_home_path,
     enable_resource_index => false,
     #create_mulgara_user => false,
